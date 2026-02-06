@@ -1,26 +1,13 @@
-public class Sandwicherie {
+package creational.builder;
+
+public class Main {
     public static void main(String[] args) {
+        Sandwich s1 = new SandwichBuilder("baguette").avecViande("jambon").build();
+        Sandwich s2 = new SandwichBuilder("complet").avecSauce("mayo").estGrille(true).build();
+        Sandwich s3 = new SandwichBuilder("ciabatta").avecViande("poulet").ajouterLegume("tomate").build();
 
-        // 1. Le Classique (Pain complet, Jambon, Emmental, Grillé)
-        Sandwich classique = new SandwichBuilder("Complet")
-                .avecViande("Jambon")
-                .avecFromage("Emmental")
-                .estGrille(true)
-                .build();
-
-        // 2. Le Végétarien (Baguette, plein de légumes, Mayo)
-        Sandwich veggie = new SandwichBuilder("Baguette")
-                .ajouterLegume("Laitue")
-                .ajouterLegume("Tomate")
-                .ajouterLegume("Oignon")
-                .avecSauce("Mayo")
-                .build();
-
-        // 3. Le Carnivore (Ciabatta, Rosbif, Cheddar, Sauce Moutarde)
-        Sandwich carnivore = new SandwichBuilder("Ciabatta")
-                .avecViande("Rosbif")
-                .avecFromage("Cheddar")
-                .avecSauce("Moutarde")
-                .build();
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
     }
 }
